@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--↑RWD響應式網頁必備語法-->
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!--↑normalizeCSS及Reset CSS，確保個瀏覽器呈現一致狀態-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--↑載入anonymous-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <!--↑載入google字體-->
+    <link rel="stylesheet" href="src/style.css">
+    <!--↑將CSS檔案import進來-->
+</head>
+
+<body>
+    <nav id="nav">
+        <!--導覽列區塊-->
+        <div class="container">
+            <!-- <div class="row nav-show-menu"> -->
+            <div class="row nav-container">
+                <!--讓上下層位置有差異-->
+                <img src="./img/logo.png" alt="bbhotel-logo" class="nav-logo">
+
+                <ul class="nav-list">
+                    <li>
+                        <a href="#about">About us</a>
+                    </li>
+                    <li>
+                        <a href="#room">Room</a>
+                    </li>
+                    <li>
+                        <a href="#testimonuals">Testimonuals</a>
+                    </li>
+                    <li>
+                        <a href="#clients">Clients</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-menu">
+                    <i class="fas fa-bars fa-2x"></i>
+                </div>
+            </div>
+            <!--.row-->
+        </div>
+        <!--.container-->
+    </nav>
+
+    <header>
+        <div class="header-container">
+            <h1 class="header-h1">Best Hotel In Vegas</h1>
+            <div class="subtitle">voted best hotel 2019 By Travel Advisor</div>
+            <div class="subtitle">5 star rated by bestHotels.Com</div>
+        </div>
+    </header>
+
+    <!--About US區塊-->
+    <section id="about" class="pt-90 pb-90">
+        <div class="container">
+            <div class="h2-container">
+                <h2 class="mb-30">About Us</h2>
+            </div>
+            <p class="About-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eligendi, autem
+                maxime explicabo
+                ipsum,
+                repellendus
+                suscipit deserunt quia rem recusandae iste quod fugit voluptate ad? Expedita commodi, magni quod, ad
+                autem
+                odit alias
+                blanditiis pariatur vero incidunt laborum minima repellat possimus odio quisquam libero eius illum sunt
+                adipisci,
+                magnam consequuntur laudantium? Nemo aliquam assumenda praesentium!</p>
+
+            <p class="mt-20 About-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eligendi,
+                autem maxime
+                explicabo
+                ipsum,
+                repellendus
+                suscipit deserunt quia rem recusandae iste quod fugit voluptate ad? Expedita commodi, magni quod, ad
+                autem
+                odit alias
+                blanditiis pariatur vero incidunt laborum minima repellat possimus odio quisquam libero eius illum sunt
+                adipisci,
+                magnam consequuntur laudantium? Nemo aliquam assumenda praesentium!</p>
+
+            <div class="mt-20 text-center">
+                <a href="#" class="btn btn-outline">Book Now</a>
+                <!-- <a href="#" class="btn btn-full">Submit</a> -->
+            </div>
+
+        </div>
+    </section>
+
+    <!--hotel-showcase區塊-->
+    <section id="room">
+        <div class="row">
+            <!--讓上下層位置有差異-->
+            <ul class="hotel-showcase">
+                <li><img src="./img/rooms-1.jpg" alt="rooms-1" class="hotel-photo"></li>
+                <li><img src="./img/rooms-2.jpg" alt="rooms-2" class="hotel-photo"></li>
+                <li><img src="./img/rooms-3.jpg" alt="rooms-3" class="hotel-photo"></li>
+                <li><img src="./img/rooms-4.jpg" alt="rooms-4" class="hotel-photo"></li>
+                <li><img src="./img/rooms-5.jpg" alt="rooms-5" class="hotel-photo"></li>
+                <li><img src="./img/rooms-6.jpg" alt="rooms-6" class="hotel-photo"></li>
+                <li><img src="./img/rooms-7.jpg" alt="rooms-7" class="hotel-photo"></li>
+                <li><img src="./img/rooms-8.jpg" alt="rooms-8" class="hotel-photo"></li>
+            </ul>
+        </div>
+    </section>
+
+    <!--Testimonials區塊-->
+    <section id="testimonuals" class="pt-90 pb-90">
+        <div class="container">
+            <div class="h2-container">
+                <h2 class="mb-30">Testimonials</h2>
+            </div>
+            <div class="row">
+                <!--col-md-4-->
+                <div class="col-md-4">
+                    <div class="testimonials-card">
+                        <!--卡片整體區塊-->
+                        <p class="testimonials-card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar felis vel nibh
+                            elementum
+                            varius. Aenean tempus nisl vel massa placerat, quis porttitor elit consequat felis vel nibh
+                            elementum.
+                        </p>
+                        <!--卡片上面區塊-->
+                        <div class="testimonials-card-text-info text-center">
+                            <img src="./img/boy.png" alt="testimonial-3" class="testimonials-card-img">
+                            <h4 class="testimonial-card-name">Kevin</h4>
+                            <div class="testimonial-card-position">VP of ABC Corp</div>
+                        </div>
+                        <!--卡片下面區塊-->
+                    </div>
+                </div>
+                <!--col-md-4-->
+                <div class="col-md-4">
+                    <div class="testimonials-card">
+                        <p class="testimonials-card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar felis vel nibh
+                            elementum
+                            varius. Aenean tempus nisl vel massa placerat, quis porttitor elit consequat felis vel nibh
+                            elementum.
+                        </p>
+                        <!--卡片上面區塊-->
+                        <div class="testimonials-card-text-info text-center">
+                            <img src="./img/girl.png" alt="testimonial-2" class="testimonials-card-img">
+                            <h4 class="testimonial-card-name">Lily</h4>
+                            <div class="testimonial-card-position">VP of DEF Corp</div>
+                        </div>
+                        <!--卡片下面區塊-->
+                    </div>
+                </div>
+                <!--col-md-4-->
+                <div class="col-md-4">
+                    <div class="testimonials-card" style="margin-bottom: 0;">
+                        <!--style="margin-bottom: 0;讓最後一個名片不會再多20的距離-->
+                        <p class="testimonials-card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar felis vel nibh
+                            elementum
+                            varius. Aenean tempus nisl vel massa placerat, quis porttitor elit consequat felis vel nibh
+                            elementum.
+                        </p>
+                        <!--卡片上面區塊-->
+                        <div class="testimonials-card-text-info text-center">
+                            <img src="./img/man.png" alt="testimonial-1" class="testimonials-card-img">
+                            <h4 class="testimonial-card-name">John</h4>
+                            <div class="testimonial-card-position">VP of GHI Corp</div>
+                        </div>
+                        <!--卡片下面區塊-->
+                    </div>
+                </div>
+                <!--col-md-4-->
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION CLIENTS區塊-->
+    <section id="clients" class="pt-60 pb-60 clients">
+        <div class="container">
+            <div class="row">
+                <!--md = 瀏覽器寬度-->
+                <!--col-sm-6 為了RWD寫的-->
+                <div class="col-md-3 col-sm-6">
+                    <div class="client-blok">
+                        <img src="./img/client-1.png" alt="client one" class="img-full">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="client-blok">
+                        <img src="./img/client-2.png" alt="client two" class="img-full">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="client-blok">
+                        <img src="./img/client-3.png" alt="client three" class="img-full">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="client-blok">
+                        <img src="./img/client-4.png" alt="client four" class="img-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION CONTACT US區塊-->
+    <section id="contact" class="pt-90 pb-90">
+        <div class="container">
+            <div class="h2-container">
+                <h2 class="mb-60">Contact Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-30">
+                    <!--為了RWD加上mb-30，增加地圖跟NAME的距離，PC頁面地圖下增加30px沒影響-->
+                    <div class="google-maps">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14441.064545746887!2d121.55220298699372!3d25.19424594362045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442adf824cfc74b%3A0x5c0be3a34fc3b079!2z6Zm95piO5bGx5ZyL5a625YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1591188271462!5m2!1szh-TW!2stw"
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form action="">
+                        <!--action=""是後端要用的-->
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-input" placeholder="Enter Your Name">
+                            <!--placeholder是input提供的功能，放入提醒文字-->
+                        </div>
+                        <div class="form-group">
+                            <label for="">E-mail</label>
+                            <input type="text" class="form-input" placeholder="Enter Your E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Message</label>
+                            <textarea class="form-input" placeholder="Enter Your Message"></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-full">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer區塊-->
+    <footer class="pt-40 pb-20">
+        <div class="container">
+            <div class="row text-center">
+                <ul class="footer-list">
+                    <li>About us</li>
+                    <li>Room</li>
+                    <li>Testimonuals</li>
+                    <li>Clients</li>
+                </ul>
+                <img src="./img/footer-logo.png" alt="footer-logo" class="footer-logo">
+            </div>
+        </div>
+    </footer>
+    <div class="copyright pt-20 pb-20 text-center">
+        Copyright © BB Hotel Designed by Big Boy Can Code
+    </div>
+
+    <!--scrollTopBtn區塊-->
+    <a href="#nav" class="scrollTopBtn"><i class="fas fa-angle-up fa-2x"></i></a>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="./src/script.js"></script>
+</body>
+
+</html>

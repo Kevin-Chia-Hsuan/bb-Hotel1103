@@ -1,0 +1,589 @@
+/***********
+Reset
+primary-light-0:#7bbff0;
+primary: #2980b9;
+primary-dark-0: #1a4d6f;
+primary-dark-1: #032e4d;
+primary-dark-2: #031e31;
+black: #535353;
+grey: #dedede;
+green-light-0:#55efc4;
+green: #29787c;
+***********/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid 1px #535353; */
+}
+
+body {
+    font-family: 'Lato',Helvetica, sans-serif;
+    color: #535353;
+}
+
+/***********
+Layout / Grid Design
+***********/
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/*平板RWD-當container寬度介於769px~992px，網頁寬度變成750px*/
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*平板RWD-當container寬度低於768px，網頁寬度變成100%*/
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/*CSS選擇器*/
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*[class^="col-"]也是CSS選擇器，只要是col-開頭的class都要套入此CSS*/
+[class^="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+
+}
+
+/*[class^="col-"]也是CSS選擇器，只要是col-開頭的class都要套入此CSS*/
+[class^="col-"]:not(:last-child) {
+    /*CSS選擇器 not(:last-child) 最後一個不應用margin-right: 30px;*/
+    margin-right: 30px;
+}
+
+.col-md-4 {
+    /*計算testimonials-card整體寬度
+    網頁寬度100% 中間2個間距，1個各是30px，分成3等分(三個名片)*/
+    width: calc((100% - 2 * 30px) / 3 );
+    /* float: left; → 此行用60行代碼取代*/
+}
+
+/*CSS選擇器，not(:last-child)除了最後一個以外，其他都要有margin-right: 30px;*/
+/* .col-md-4:not(:last-child) {
+    margin-right: 30px;
+} */
+
+.col-md-3 {
+    width: calc((100% - 3 * 30px) / 4 );
+}
+
+.col-md-6 {
+    width: calc((100% - 1 * 30px) / 2 );
+}
+
+/*平板RWD-當廠商、地圖、聯絡區寬度低於768px，網頁寬度變成100%*/
+@media only screen and (max-width: 768px) {
+    .col-md-4, .col-md-6 {
+        width: 100%;
+    }
+
+    .col-sm-6 {
+        float: left;
+        width: calc((100% - 1 * 30px) / 2 );
+    }
+
+    .col-sm-6:not(:last-child) {
+        /*30改成15，為了RWD可以放得下一行兩個*/
+        margin-right: 15px;
+    }
+
+}
+
+/***********
+Global HTML ELEMENT
+***********/
+
+a {
+    text-decoration: none;
+    color: #535353;
+}
+
+.h2-container {
+    display: flex;
+    justify-content: center;/*置中*/
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 32px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::before {
+    /*做出藍色字條*/
+    content: "";/*使用 ::before 和 ::after 一定要有 content 否則不會發生作用*/
+    display: block;/*換行*/
+    width: 30px;
+    height: 5px;
+    background-color: #2980b9;
+    position: absolute;
+    /*讓藍色底線距離字體-10*/
+    bottom: -10px;
+}
+
+.btn {/*按鈕共用語法*/
+    border-radius: 3px;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.btn-outline{
+    border: 1px solid #2980b9;
+    color: #2980b9;
+    transition: all 0.5s;/*製作按鈕動畫2*/
+}
+
+.btn-outline:hover {/*製作按鈕動畫1*/
+    border: 1px solid #7bbff0;
+    color: #7bbff0;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);/*製造陰影*/
+}
+
+.btn-full {
+    background: #2980b9;
+    color: #ffffff;
+    transition: all 0.5s;
+}
+
+.btn-full:hover {
+    background: #1a4d6f;    
+}
+
+.img-full {
+    width: 100%;
+}
+
+/***********
+Utilitics共用區塊
+老師建議，因為專案切版很常用到，可以養成先寫的習慣
+把padding top、bottom 10、20、30、60、90都先寫出來
+不論有沒有用到
+***********/
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-90 {
+    padding-top: 90px;
+}
+.pt-40 {
+    padding-top: 40px;
+}
+.pt-60 {
+    padding-top: 60px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-40 {
+    padding-bottom: 40px;
+}
+.pb-90 {
+    padding-bottom: 90px;
+}
+.pb-60 {
+    padding-bottom: 60px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/***********
+Nav
+***********/
+nav {
+    /* padding: 16px 0; */
+    padding: 16px;/*RWD導覽列需要*/
+}
+
+.nav-logo {
+    display: block;
+    width: 130px;
+    float: left;/*row*/
+}
+
+.nav-list {
+    list-style: none;
+    float: right;/*row*/
+}
+
+/*平板RWD-當導覽列區寬度低於768px，導覽列消失*/
+@media only screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+}
+
+.nav-list li {
+    /* display: inline; inline 無法給予top及bottom屬性*/
+    display: inline-block;
+    margin: 16px;
+    margin-top: 15px;
+}
+
+/*CSS選擇器*/
+.nav-list li:last-of-type {
+    margin: 0;
+}
+
+/*PC版網頁，RWD用導覽列圖示不顯示*/
+.nav-menu {
+    display: none;
+}
+
+/*平板RWD-當導覽列區寬度低於768px，增加RWD用導覽列圖示*/
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        margin-top: 10px;
+        display: block;
+        float: right;
+    }
+}
+
+.nav-show-menu {
+    position: relative;/*父層*/
+}
+
+/*nav-show-menu父層、nav-list子層都有的話，這個CSS就成立*/
+.nav-show-menu .nav-list {
+    display: block;
+    position: absolute;
+    top: 50px;/*選單被jumbotron.jpg擋到*/
+    z-index: 5;/*負責x軸，給他>0就可以浮在上方*/
+    background: #ffffff;
+    width: 100%;
+    /* border: solid 1px black; */
+    box-shadow: 0px 0px 3px 0.4px rgba(0,0,0,0.75);
+}
+
+/*CSS組合*/
+.nav-show-menu .nav-list li{
+    display: block;
+    text-align: center;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/***********
+Header
+***********/
+
+/* ./是指檔案現在的位置 (當前資料夾)*/
+/* ../是指檔案上一層的位置 (上層資料夾)*/
+header {
+
+    background: url('../img/jumbotron.jpg');
+    /*當瀏覽器寬度超過圖片大小時，圖片會被重複顯示
+    ，使用background-repeat: no-repeat來阻止重複顯示*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    position: relative;
+}
+
+.header-container {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+/*平板RWD-當Best Hotel In Vegas區寬度低於768px，置中呈現*/
+@media only screen and (max-width: 768px) {
+    .header-container {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+
+.header-h1 {
+    font-weight: 300;
+    font-size: 42px;
+    margin: 0 0 10px 0;
+}
+
+.subtitle{
+    color: #dedede;
+    /*文字斜體*/
+    font-style: italic;
+    margin-top: 10px;
+    /*讓每個字的第一個都變成大寫*/
+    text-transform: capitalize;
+}
+
+/***********
+About
+***********/
+.About-text {
+    line-height: 1.8;
+    width: 80%;
+    /* margin: 0 auto; 不能這樣寫，跟mt-20衝突，後面的CSS覆蓋前面的CSS*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/***********
+Hotel-Showcase
+***********/
+
+.hotel-showcase {
+    list-style: none;/*移除左邊的·*/
+    width: 100%;
+}
+
+.hotel-showcase li {
+    width: 25%;/*圖片父層寬度*/
+    float: left;/*row*/
+    height: 180px;/*圖片父層高度*/
+    overflow: hidden;/*隱藏圖片放大動畫超出邊界*/
+}
+
+/*平板RWD-當房間照片區寬度低於768px，改成一行2個，由原本的25%改成50%"*/
+@media only screen and (max-width: 768px) {
+    .hotel-showcase li {
+        width: 50%;
+    }
+}
+
+.hotel-photo {
+    width: 100%;/*圖片寬度*/
+    height: 100%;/*圖片高度*/
+    transition: all 0.5s;/*圖片放大動畫*/
+}
+
+.hotel-photo:hover {
+    transform: scale(1.1);/*圖片放大效果*/
+}
+
+/***********
+Testimonials-Card
+***********/
+
+/*暫時先給的寬度*/
+.testimonials-card {
+    /* width: 350px; */
+    padding: 60px 30px 0px;/*top right+left bottom*/
+    border: solid 1px #cccccc;
+    border-radius: 20px;
+    overflow: hidden;/*做出下面方框圓角*/
+}
+
+/*平板RWD-當名片區寬度低於768px，每個間距20px，除了最後一個不要距離20px，因此在HTML的第159行加上style="margin-bottom: 0;"*/
+@media only screen and (max-width: 768px) {
+    .testimonials-card {
+        margin-bottom: 20px;
+    }
+}
+
+/*卡片上面區塊*/
+.testimonials-card-text {
+    line-height: 1.5;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+/*合併共用語法*/
+.testimonials-card-text::before,
+.testimonials-card-text::after {
+    font-size: 64px;
+    color: #dedede;
+    position: absolute;
+}
+
+.testimonials-card-text::before {
+    content: "\201C";
+    /* font-size: 64px;
+    color: #dedede;
+    position: absolute; */
+    top: -45px;
+    left: -10px;
+}
+
+.testimonials-card-text::after {
+    content: "\201D";
+    /* font-size: 64px;
+    color: #dedede;
+    position: absolute; */
+    bottom: -10px;
+    right: 0px;
+}
+
+/*卡片下面區塊*/
+.testimonials-card-text-info {
+    background: #29787c;
+    color: #ffffff;
+    margin: 0 -30px;/*-30px是抵銷.testimonials-card的padding 30px*/
+    padding: 60px 0px 30px;
+    position: relative;
+    /* text-align: center; */
+}
+
+.testimonial-card-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.testimonial-card-position {
+    color: #55efc4;
+}
+
+.testimonials-card-img {
+    position: absolute;
+    left: 50%;
+    top: -25%;
+    transform: translateX(-50%);/*圓形大頭貼置中*/
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    border: solid 3px #7bbff0;
+}
+
+/***********
+Clients區塊
+***********/
+
+.clients {
+    background: #031e31;/*藍色背景*/
+
+}
+
+/*合作公司圖示區塊*/
+/* .client-blok {
+    height: 70px;
+    background: grey;
+    width: 100%;
+} */
+
+/***********
+Contact Us區塊
+***********/
+
+/* .demo-block {
+    background: #cccccc;
+    height: 500px;
+} */
+
+/*google地圖寬度解決法*/
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; /*地圖呈現4:3比例*/
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding: 6px 12px;
+    border: solid 1px #dedede;
+}
+/*做出Name區塊及E-mail區塊的間距*/
+.form-group {
+    margin-bottom: 10px;
+}
+/*同時有textarea及form-input才成立*/
+textarea.form-input {
+    height: 150px;
+}
+
+/***********
+Footer區塊
+***********/
+footer {
+    background: #032e4d;
+}
+
+.footer-list {
+    list-style: none;
+    color: #ffffff;
+}
+
+.footer-list li {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.footer-list li:last-of-type {
+    margin-right: 0;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+.copyright {
+    background: #031e31;
+    color: #2980b9;
+    font-weight: 300;
+}
+
+/***********
+scroll Top Btn區塊
+***********/
+.scrollTopBtn {
+    position: fixed;/*圓形圖示*/
+    display: flex;/*^圖示*/
+    justify-content: center;/*^圖示置中*/
+    align-items: center;/*^圖示置中*/
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 30px;
+    border-radius: 50px;
+    background: #55efc4;
+}
+
+.scrollTopBtn i {
+    color: #ffffff;
+}
